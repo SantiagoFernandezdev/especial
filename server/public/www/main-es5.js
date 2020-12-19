@@ -2512,6 +2512,17 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           return m.SANcreadorPageModule;
         });
       }
+    }, {
+      path: 'redmodal',
+      loadChildren: function loadChildren() {
+        return __webpack_require__.e(
+        /*! import() | Pages-redmodal-redmodal-module */
+        "Pages-redmodal-redmodal-module").then(__webpack_require__.bind(null,
+        /*! ./Pages/redmodal/redmodal.module */
+        "./src/app/Pages/redmodal/redmodal.module.ts")).then(function (m) {
+          return m.RedmodalPageModule;
+        });
+      }
     }];
 
     var AppRoutingModule = function AppRoutingModule() {
@@ -4798,17 +4809,24 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
     /*! @ionic/angular */
     "./node_modules/@ionic/angular/__ivy_ngcc__/fesm2015/ionic-angular.js");
+    /* harmony import */
+
+
+    var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+    /*! @angular/router */
+    "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
 
     var ServicioRedService =
     /*#__PURE__*/
     function () {
-      function ServicioRedService(red, cargarElementos, socket, modalCtrl) {
+      function ServicioRedService(red, cargarElementos, socket, modalCtrl, router) {
         _classCallCheck(this, ServicioRedService);
 
         this.red = red;
         this.cargarElementos = cargarElementos;
         this.socket = socket;
         this.modalCtrl = modalCtrl;
+        this.router = router;
         this.conectarRed();
       }
 
@@ -4820,12 +4838,18 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           return this.red.onChange().subscribe(function (e) {
             console.log(_this31.red.type, ' Tipo de red');
 
-            if (_this31.red.type === 'none') {} else if (_this31.red.type !== 'none') {
+            if (_this31.red.type === 'none') {
+              _this31.sacarModal();
+            } else if (_this31.red.type !== 'none') {
               _this31.cerrar();
             }
 
             _this31.cargarElementos.cargarRed(_this31.red.type);
           });
+        }
+      }, {
+        key: "sacarModal",
+        value: function sacarModal() {// this.router.navigate
         }
       }, {
         key: "cerrar",
@@ -4843,7 +4867,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     }();
 
     ServicioRedService.ɵfac = function ServicioRedService_Factory(t) {
-      return new (t || ServicioRedService)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](_ionic_native_network_ngx__WEBPACK_IMPORTED_MODULE_0__["Network"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](_cargas_usuarios_service__WEBPACK_IMPORTED_MODULE_2__["CargaElementosUsuariosService"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](ngx_socket_io__WEBPACK_IMPORTED_MODULE_3__["Socket"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](_ionic_angular__WEBPACK_IMPORTED_MODULE_4__["ModalController"]));
+      return new (t || ServicioRedService)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](_ionic_native_network_ngx__WEBPACK_IMPORTED_MODULE_0__["Network"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](_cargas_usuarios_service__WEBPACK_IMPORTED_MODULE_2__["CargaElementosUsuariosService"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](ngx_socket_io__WEBPACK_IMPORTED_MODULE_3__["Socket"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](_ionic_angular__WEBPACK_IMPORTED_MODULE_4__["ModalController"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](_angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"]));
     };
 
     ServicioRedService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjectable"]({
@@ -4868,6 +4892,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           type: ngx_socket_io__WEBPACK_IMPORTED_MODULE_3__["Socket"]
         }, {
           type: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["ModalController"]
+        }, {
+          type: _angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"]
         }];
       }, null);
     })();

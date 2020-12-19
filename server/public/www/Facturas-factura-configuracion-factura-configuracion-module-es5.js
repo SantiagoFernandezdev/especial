@@ -444,7 +444,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](29, "strong");
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](30, "0000");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](30);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
@@ -520,7 +520,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngModel", ctx_r608.titular);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](10);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](6);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate"](ctx_r608.consecutivo);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](4);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("checked", ctx_r608.iva);
 
@@ -551,6 +555,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.titular = '';
         this.iva = false;
         this.ivaValor = 0;
+        this.consecutivo = '';
         this.proceso = false;
       }
 
@@ -595,6 +600,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                             _this.nit = data.response.nit;
                             _this.iva = data.response.iva;
                             _this.ivaValor = data.response.valorIva;
+                            _this.consecutivo = data.response.consecutivo;
                             _this.mostrar = true;
                           }
                         } else {
@@ -714,7 +720,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](6, FacturaConfiguracionPage_div_6_Template, 3, 0, "div", 3);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](7, FacturaConfiguracionPage_ion_list_7_Template, 41, 7, "ion-list", 4);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](7, FacturaConfiguracionPage_ion_list_7_Template, 41, 8, "ion-list", 4);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
         }

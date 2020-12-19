@@ -1706,6 +1706,10 @@ const routes = [
     {
         path: 'historias/:tipo',
         loadChildren: () => Promise.all(/*! import() | Pages-Santiago-sancreador-sancreador-module */[__webpack_require__.e("default~Pages-Modales-igtmpublic-igtmpublic-module~Pages-Santiago-sancreador-sancreador-module~Pages~28037653"), __webpack_require__.e("common"), __webpack_require__.e("Pages-Santiago-sancreador-sancreador-module")]).then(__webpack_require__.bind(null, /*! ./Pages/Santiago/sancreador/sancreador.module */ "./src/app/Pages/Santiago/sancreador/sancreador.module.ts")).then(m => m.SANcreadorPageModule)
+    },
+    {
+        path: 'redmodal',
+        loadChildren: () => __webpack_require__.e(/*! import() | Pages-redmodal-redmodal-module */ "Pages-redmodal-redmodal-module").then(__webpack_require__.bind(null, /*! ./Pages/redmodal/redmodal.module */ "./src/app/Pages/redmodal/redmodal.module.ts")).then(m => m.RedmodalPageModule)
     }
 ];
 class AppRoutingModule {
@@ -2812,6 +2816,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _cargas_usuarios_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../cargas/usuarios.service */ "./src/app/providers/cargas/usuarios.service.ts");
 /* harmony import */ var ngx_socket_io__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ngx-socket-io */ "./node_modules/ngx-socket-io/__ivy_ngcc__/fesm2015/ngx-socket-io.js");
 /* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/__ivy_ngcc__/fesm2015/ionic-angular.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
+
+
 
 
 
@@ -2823,23 +2830,28 @@ __webpack_require__.r(__webpack_exports__);
 
 
 class ServicioRedService {
-    constructor(red, cargarElementos, socket, modalCtrl) {
+    constructor(red, cargarElementos, socket, modalCtrl, router) {
         this.red = red;
         this.cargarElementos = cargarElementos;
         this.socket = socket;
         this.modalCtrl = modalCtrl;
+        this.router = router;
         this.conectarRed();
     }
     conectarRed() {
         return this.red.onChange().subscribe((e) => {
             console.log(this.red.type, ' Tipo de red');
             if (this.red.type === 'none') {
+                this.sacarModal();
             }
             else if (this.red.type !== 'none') {
                 this.cerrar();
             }
             this.cargarElementos.cargarRed(this.red.type);
         });
+    }
+    sacarModal() {
+        // this.router.navigate
     }
     cerrar() {
         this.modalCtrl.dismiss();
@@ -2848,14 +2860,14 @@ class ServicioRedService {
         this.conectarRed().unsubscribe();
     }
 }
-ServicioRedService.ɵfac = function ServicioRedService_Factory(t) { return new (t || ServicioRedService)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](_ionic_native_network_ngx__WEBPACK_IMPORTED_MODULE_0__["Network"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](_cargas_usuarios_service__WEBPACK_IMPORTED_MODULE_2__["CargaElementosUsuariosService"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](ngx_socket_io__WEBPACK_IMPORTED_MODULE_3__["Socket"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](_ionic_angular__WEBPACK_IMPORTED_MODULE_4__["ModalController"])); };
+ServicioRedService.ɵfac = function ServicioRedService_Factory(t) { return new (t || ServicioRedService)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](_ionic_native_network_ngx__WEBPACK_IMPORTED_MODULE_0__["Network"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](_cargas_usuarios_service__WEBPACK_IMPORTED_MODULE_2__["CargaElementosUsuariosService"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](ngx_socket_io__WEBPACK_IMPORTED_MODULE_3__["Socket"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](_ionic_angular__WEBPACK_IMPORTED_MODULE_4__["ModalController"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](_angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"])); };
 ServicioRedService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjectable"]({ token: ServicioRedService, factory: ServicioRedService.ɵfac, providedIn: 'root' });
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵsetClassMetadata"](ServicioRedService, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"],
         args: [{
                 providedIn: 'root'
             }]
-    }], function () { return [{ type: _ionic_native_network_ngx__WEBPACK_IMPORTED_MODULE_0__["Network"] }, { type: _cargas_usuarios_service__WEBPACK_IMPORTED_MODULE_2__["CargaElementosUsuariosService"] }, { type: ngx_socket_io__WEBPACK_IMPORTED_MODULE_3__["Socket"] }, { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["ModalController"] }]; }, null); })();
+    }], function () { return [{ type: _ionic_native_network_ngx__WEBPACK_IMPORTED_MODULE_0__["Network"] }, { type: _cargas_usuarios_service__WEBPACK_IMPORTED_MODULE_2__["CargaElementosUsuariosService"] }, { type: ngx_socket_io__WEBPACK_IMPORTED_MODULE_3__["Socket"] }, { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["ModalController"] }, { type: _angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"] }]; }, null); })();
 
 
 /***/ }),
