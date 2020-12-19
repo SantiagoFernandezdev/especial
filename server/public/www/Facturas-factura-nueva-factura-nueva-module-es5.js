@@ -1738,7 +1738,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](3);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", ctx_r623.items.length > 0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", ctx_r623.items.length > 0 && ctx_r623.carga);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
 
@@ -1746,7 +1746,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", ctx_r623.items.length > 0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", ctx_r623.items.length > 0 && ctx_r623.carga);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](4);
 
@@ -1791,6 +1791,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.cc = '';
         this.ciudad = '';
         this.id = '';
+        this.carga = false;
       }
 
       _createClass(ModalFacturaPage, [{
@@ -1845,6 +1846,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
                           _this8.items.push(data);
 
+                          _this8.carga = false;
+
                           _this8.calculo();
                         }
                       }]
@@ -1885,7 +1888,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             this.iva = this.subtotal * 0.19;
           }
 
-          this.total = this.subtotal + this.iva; // // console.log('data de la factura',  this.subtotal, this.total, this.iva, this.data.iva, this.items)
+          this.total = this.subtotal + this.iva;
+          this.carga = true; // // console.log('data de la factura',  this.subtotal, this.total, this.iva, this.data.iva, this.items)
         }
       }, {
         key: "guardar",

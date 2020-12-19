@@ -856,11 +856,11 @@ function ModalFacturaPage_ion_list_9_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](8);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngForOf", ctx_r623.items);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", ctx_r623.items.length > 0);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", ctx_r623.items.length > 0 && ctx_r623.carga);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", ctx_r623.items.length > 0 && ctx_r623.data.iva);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", ctx_r623.items.length > 0);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", ctx_r623.items.length > 0 && ctx_r623.carga);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](4);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngModel", ctx_r623.cliente);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](3);
@@ -889,6 +889,7 @@ class ModalFacturaPage {
         this.cc = '';
         this.ciudad = '';
         this.id = '';
+        this.carga = false;
     }
     ngOnInit() {
     }
@@ -930,6 +931,7 @@ class ModalFacturaPage {
                             // console.log(data);
                             data.total = data.cantidad * data.valoru;
                             this.items.push(data);
+                            this.carga = false;
                             this.calculo();
                         }
                     }
@@ -955,6 +957,7 @@ class ModalFacturaPage {
             this.iva = this.subtotal * 0.19;
         }
         this.total = this.subtotal + this.iva;
+        this.carga = true;
         // // console.log('data de la factura',  this.subtotal, this.total, this.iva, this.data.iva, this.items)
     }
     guardar() {
