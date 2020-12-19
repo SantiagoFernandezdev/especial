@@ -1,0 +1,638 @@
+<style>
+    * {}
+    
+    .contenedor {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 12px;
+        width: 90%;
+        margin: auto;
+    }
+    
+    .padre {
+        border: 1px solid #A8D08D;
+    }
+    
+    .title {
+        color: #1E3C7B;
+    }
+    
+    .t {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    
+    .s {
+        border: 0px;
+    }
+    
+    .t td {
+        border: 1px solid #A8D08D;
+        padding: 5px;
+    }
+    
+    .none {
+        padding: 0px !important;
+        border: 0px !important;
+    }
+    
+    .titulo {
+        padding: 0 8px;
+        font-size: 11px;
+    }
+    
+    .titulo2 {
+        background: #f3f3f3;
+    }
+    
+    .center {
+        text-align: center;
+    }
+    
+    .bold {
+        font-weight: bold;
+    }
+    
+    .small {
+        font-size: 10px !important;
+    }
+    
+    .firma {
+        text-align: center;
+    }
+    
+    .firma img {
+        width: 80px;
+    }
+    
+    .t tr {
+        page-break-inside: avoid;
+    }
+    
+    .image img {
+        width: 200px !important;
+        height: 250px !important;
+    }
+    
+    .tt td {
+        border: 0px !important;
+    }
+    
+    .b {
+        border-bottom: 1px solid #A8D08D;
+    }
+    
+    .mitad {
+        width: 50%;
+    }
+    
+    .vtgps {
+        display: none !important;
+    }
+    
+    .contentFigures td {
+        text-align: center;
+    }
+    
+    .contentFigures img,
+    .contentFigures figure {
+        text-align: center;
+        margin: auto;
+        width: 200px !important;
+        height: 250px !important;
+    }
+    
+    .mitad {
+        width: 300px;
+    }
+    
+    .verde {
+        background: #E2EFD9;
+    }
+    
+    .colorVerde {
+        color: #385624;
+    }
+    
+    .o td {
+        border: 0px !important;
+    }
+    
+    .colorBorder {
+        border-top: 2px solid #188A57;
+    }
+    
+    .general tr:nth-child(even) {
+        background: #f3f3f3;
+    }
+    
+    .gra {
+        display: contents;
+    }
+</style>
+<div class="contenedor">
+    <table class="t" cellspacing="0" cellspadding="0">
+
+        <thead>
+            <tr>
+                <td colspan="" style="padding:8px; border: 0px;"></td>
+            </tr>
+            <tr>
+                <td colspan="3" style="padding:0px; border:0px;">
+                    <table class="t" style="width:100%; border:0px;">
+
+                        <tr>
+                            <td style="width: 200px;" class="center">
+                                <img src="https://s3.amazonaws.com/logocompanies/0DAD6CB0-A113-4FD9-9805-D6E1EA925943.PNG
+                                                 " width="250px" alt="">
+                            </td>
+                            <td class="center bold" style=" font-size: 18px; background: #fafafa;">KARDEX- Tarjeta de control de existencia</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="" style="padding:8px; border: 0px;"></td>
+            </tr>
+        </thead>
+
+
+
+
+
+        <tbody>
+            <tr>
+                <td class="none">
+                    <table class="t">
+                        <tr>
+                            <td class="bold">Fecha: <span id="desde"></span> hasta <span id="hasta"></span> </td>
+                            <td class="bold">Sede: <span id="sede"></span></td>
+                        </tr>
+                        <tr>
+                            <td class="center bold">
+                                <div>INSUMO</div>
+                                <select class="center" style="padding: 10px; background: #FFEDB7; outline: none; border: 1px solid rgba(0,0,0,0.1);" name="" id="quimicos">
+                                    <option value="Seleccione Insumo">Seleccione Insumo</option>
+                                    <option value="Todos los Insumos">Todos los Insumos</option>
+                                </select>
+                            </td>
+                            <td class="center bold">
+                                <div>RESPONSABLE</div>
+                                <select class="center" style="padding: 10px; background: #FFEDB7; outline: none; border: 1px solid rgba(0,0,0,0.1);" name="" id="creado">
+                                    <option value="Seleccione Responsable">Seleccione Responsable</option>
+                                    <option value="Todos los Usuarios">Todos los Usuarios</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="none">
+                    <table class="t">
+                        <tr style="background: #777; color: #fff;">
+                            <td class="center bold">FECHA</td>
+                            <td class="center bold">HORA</td>
+                            <td class="center bold">USUARIO</td>
+                            <td class="center bold">CLIENTE</td>
+                            <td class="center bold">INSUMO</td>
+
+
+                            <td class="center bold">ENTRADA</td>
+                            <td class="center bold">UNID. MEDIDA</td>
+                            <td class="center bold">PISCINA</td>
+                            <td class="center bold">SALIDA</td>
+                            <!-- <td class="center bold" >SALDO</td> -->
+                            <td class="center bold">REVISIÓN</td>
+                        </tr>
+
+                        <tbody id="general" class="general">
+
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="none">
+                    <table class="t">
+                        <tbody>
+                            <tr>
+                                <td id="gra" class="gra">
+
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+
+            <tr style="margin-top: 20px;">
+                <td class="none">
+                    <table class="t">
+                        <tr>
+                            <td class="none" style="vertical-align: left; width: 50%;">
+                                <table class="t" style="width: 200px;">
+                                    <tr>
+                                        <td class="center bold" style="background: #777; color: #fff;">Total Entradas
+                                        </td>
+                                        <td class="center bold" style="background: #777; color: #fff;">Total Salidas
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="center bold" style="background: #D7EBF1;">
+                                            <h3 id="entradas"></h3>
+                                        </td>
+
+                                        <td class="center bold" style="background: #FFF9E7;">
+                                            <h3 id="salidas"></h3>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+
+                            <td class="none" style="float: right; width: 50%;">
+                                <table class="t" style="width: 200px; float: right;">
+                                    <tr>
+                                        <td class="center bold" style="background: #777; color: #fff;">Saldo Actual</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center bold" style="background: #fafafa;">
+                                            <h3 id="saldo"></h3>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </tbody>
+
+
+
+
+        <script type="text/template" id="graf">
+            <span style="display: inline-block; margin: .5%; width: 49%; height: 200px; background-color: #f1f1f1;" id="<%= id %>"></span>
+        </script>
+
+        <script type="text/template" id="tabla">
+            <tr>
+                <td class="center bold" nowrap>
+                    <%= fecha %>
+                </td>
+                <td class="center bold" nowrap>
+                    <%= hora %>
+                </td>
+                <td class="center bold" style="width: 200px;">
+                    <%= resp %>
+                </td>
+                <td class="center bold">
+                    <%= cliente %>
+                </td>
+                <td class="center bold">
+                    <%= insumo %>
+                </td>
+
+                <td class="center bold">
+                    <%= entrada %>
+                </td>
+                <td class="center bold">
+                    <%= unid %>
+                </td>
+                <td style="font-size: 11px;">
+                    <%= n1 %>
+                </td>
+                <td class="center bold">
+                    <%= salida %>
+                </td>
+                <!-- <td class="center bold" ><%= saldo %></td> -->
+                <td class="center bold">
+                    <%= revision %>
+                </td>
+            </tr>
+        </script>
+    </table>
+    </center>
+
+    <script type="text/javascript">
+        function getList(list, location, name) {
+            var salida = "";
+            list.forEach(element => {
+                if (element.LocationName == location) {
+                    if (element.Name == name) {
+                        (element.Values).forEach(element2 => {
+                            if (element2.apiId == "VT_QTY") {
+                                salida = element2.Value;
+                            }
+                        });
+                    }
+                }
+                // console.log((salida));
+            });
+            return salida
+        }
+
+
+
+        function LoadMyCustoms(response, lan, filters) {
+            try {
+                moment.locale('es');
+
+
+                console.log(filters);
+                google.charts.load('current', {
+                    'packages': ['corechart']
+                });
+                google.charts.setOnLoadCallback(drawChart);
+
+                function drawChart() {
+
+                    var filter_to;
+                    var filter_from;
+                    if (typeof(filters) != 'undefined') {
+                        filter_to = moment(moment(filters.dateto).format('YYYY-MM-DD HH:mm'));
+                        filter_from = moment(moment(filters.datefrom).format('YYYY-MM-DD HH:mm'));
+                    }
+
+                    var hasta = moment(filter_to._i).format("LL");
+                    var desde = moment(filter_from._i).format("LL");
+
+                    $("#desde").html(desde);
+                    $("#hasta").html(hasta);
+                    var data_ = [];
+                    var exi = 1000;
+                    var quimico = '';
+
+                    $.each(response[0].data, function(l, dat) {
+                        var datos = {};
+                        data_.push(dat);
+                    })
+
+                    var clientes = _.unique(_.map(data_, function(l) {
+                        return l.loc_name;
+                    })).filter(function(item) {
+                        return item !== "";
+                    })
+                    $("#sede").html(clientes[0]);
+                    // console.log(clientes);
+                    var creados = _.unique(_.map(data_, function(l) {
+                        return l.act_piscinero;
+                    })).filter(function(item) {
+                        return item !== "";
+                    })
+
+                    var elementos = _.unique(_.map(data_, function(l) {
+                        return l.md_kardex_name;
+                    })).filter(function(item) {
+                        return item !== "" && item !== 'n1' && item !== 'n2';
+                    })
+
+                    // console.log(elementos);
+
+                    $.each(elementos, function(i, ele) {
+                        $("#quimicos").append('<option value="' + ele + '">' + ele + '</option>')
+
+                    });
+
+                    $.each(creados, function(i, ele) {
+                        $("#creado").append('<option value="' + ele + '">' + ele + '</option>')
+
+                    });
+
+
+
+                    $("#quimicos").on('change', function() {
+
+                        quimico = $(this).val()
+                        $('#general').html('');
+
+
+                    })
+
+
+                    $("#creado").on('change', function() {
+
+                        $('#general').html('');
+                        var data = [];
+                        if (quimico === 'Todos los Insumos' && $(this).val() !== 'Todos los Usuarios') {
+                            data = _.where(data_, {
+                                act_piscinero: $(this).val()
+                            });
+                        } else if (quimico === 'Todos los Insumos' && $(this).val() === 'Todos los Usuarios') {
+                            data = data_;
+                        } else if (quimico !== 'Todos los Insumos' && $(this).val() === 'Todos los Usuarios') {
+                            data = _.where(data_, {
+                                md_kardex_name: quimico
+                            });
+                        } else if (quimico !== 'Todos los Insumos' && $(this).val() !== 'Todos los Usuarios') {
+                            data = _.where(data_, {
+                                md_kardex_name: quimico,
+                                act_piscinero: $(this).val()
+                            });
+                        }
+
+
+
+                        /* var piscinas = _.unique(_.map(data, function(l) { return l.ass_name; })).filter(function(item){
+                        return item !== "";
+                        });*/
+
+                        /*    $.each(piscinas, function(ii, piscina){
+                        var data_piscina = _.where(data, {ass_name: piscina});*/
+
+
+                        $('#general').html('');
+                        $('#gra').html('');
+
+                        var fechas = _.unique(_.map(data, function(l) {
+                            return l.act_fecha;
+                        })).filter(function(item) {
+                            return item !== "";
+                        });
+
+
+                        var horas = _.unique(_.map(data, function(l) {
+                            return l.act_hora;
+                        })).filter(function(item) {
+                            return item !== "";
+                        });
+
+                        var arrayGrafica = [];
+
+
+                        var entradas = 0;
+                        var salidas = 0;
+                        var saldo = 0;
+
+                        $.each(fechas, function(ii, fecha) {
+                            var data_fecha = _.where(data, {
+                                act_fecha: fecha
+                            });
+                            var lenn = data_fecha.length - 1;
+                            var sal = data_fecha[lenn].md_kardex_vt_qty_balance;
+
+                            // console.log(data_fecha, 'Bien');
+                            // console.log(sal, 'Sal');
+
+                            $.each(data_fecha, function(d, date) {
+
+                                var sumaEntradas = 0;
+                                var sumaSalida = 0;
+                                if (date.md_kardex_vt_qty_reference === "INGRESO") {
+                                    sumaEntradas = date.md_kardex_vt_qty_reference === "INGRESO" ? parseFloat(date.md_kardex_vt_qty) : 0;
+                                    entradas = entradas + sumaEntradas;
+                                    hora = date.act_hora;
+                                    saldo = saldo + sumaEntradas;
+                                }
+
+                                if (date.md_kardex_vt_qty_reference === "EGRESO") {
+                                    sumaSalida = date.md_kardex_vt_qty_reference === "EGRESO" ? parseFloat(date.md_kardex_vt_qty) : 0;
+                                    hora = date.act_hora;
+                                    salidas = salidas + sumaSalida;
+                                    saldo = saldo - sumaSalida;
+                                }
+
+                                console.log(date.loc_name);
+                                console.log(date.md_kardex_name);
+                                console.log("ACAAAA");
+                                saldo2 = getList(filters.EntitiesData, date.loc_name, date.md_kardex_name)
+                                console.log(saldo2);
+                                //  console.log(sumaEntradas, sumaSalida);
+
+                                var template = _.template($("#tabla").html(), {
+                                    fecha: fecha,
+                                    hora: date.act_hora,
+                                    resp: date.act_piscinero,
+                                    cliente: date.loc_name,
+                                    insumo: date.md_kardex_name,
+                                    unid: date.md_kardex_unidaddemedida,
+                                    entrada: sumaEntradas,
+                                    n1: date.ass_name,
+                                    salida: sumaSalida,
+                                    saldo: saldo2, //sal,
+                                    revision: '',
+                                });
+
+                                $('#general').append(template);
+
+                            })
+
+
+
+
+                            /*   })
+                            
+                            
+                            */
+
+
+                        })
+
+
+                        var piscinas = _.unique(_.map(data, function(il) {
+                            return il.ass_name
+                        }));
+                        //console.log(piscinas);
+
+
+                        $.each(piscinas, function(v, kl) {
+                            //  console.log(kl, data)
+                            var datapis = _.where(data, {
+                                ass_name: kl
+                            });
+                            //console.log(datapis, 'data');
+                            var graficar = [
+                                ['Producto', 'Entradas', {
+                                    role: 'annotation'
+                                }, 'Salidas', {
+                                    role: 'annotation'
+                                }]
+                            ];
+
+                            var prodcutos = _.unique(_.map(datapis, function(il) {
+                                return il.md_kardex_name
+                            }));
+                            // console.log(prodcutos)
+                            $.each(prodcutos, function(i, pd) {
+
+                                var entprod = 0;
+                                var saliprod = 0;
+
+                                var dataprod = _.where(datapis, {
+                                    md_kardex_name: pd
+                                });
+
+                                $.each(dataprod, function(y, yy) {
+
+                                    if (yy.md_kardex_vt_qty_reference === "INGRESO") {
+                                        entprod = yy.md_kardex_vt_qty_reference === "INGRESO" ? entprod + parseFloat(yy.md_kardex_vt_qty) : entprod + 0;
+                                    }
+
+
+                                    if (yy.md_kardex_vt_qty_reference === "EGRESO") {
+                                        saliprod = yy.md_kardex_vt_qty_reference === "EGRESO" ? saliprod + parseFloat(yy.md_kardex_vt_qty) : saliprod + 0;
+                                    }
+
+                                })
+
+                                graficar.push([pd, entprod, entprod.toString(), saliprod, saliprod.toString()]);
+
+
+                            })
+
+                            //   console.log(graficar);
+
+                            var template = _.template($("#graf").html(), {
+                                id: 'grafica' + v
+                            })
+
+                            $("#gra").append(template);
+
+                            var datae = google.visualization.arrayToDataTable(graficar);
+
+                            var options = {
+                                title: kl,
+                                subtitle: 'Informe de esta piscina',
+                                width: '100%',
+                                height: '100%',
+                                legend: {
+                                    position: 'top'
+                                }
+                            };
+
+                            var chart = new google.visualization.ColumnChart(document.getElementById('grafica' + v));
+                            chart.draw(datae, options);
+                        })
+
+
+
+                        $('#entradas').html(entradas)
+                        $('#salidas').html(salidas)
+                        $('#saldo').html(saldo2)
+
+                        /*  })*/
+                    });
+
+
+
+                }
+            } catch (exc) {
+                // // console.log("ucmycustoms_report", "ppal", exc);
+            }
+
+        }
+
+
+
+        app.AfterLoadMyCustom = function(response, lan, filters, ) {
+            try {
+                return LoadMyCustoms(response, lan, filters);
+
+            } catch (exc) {
+                app.excManager("ucmycustoms_report", "AfterLoad", exc);
+            }
+        }
+    </script>

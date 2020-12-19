@@ -1,0 +1,117 @@
+<!doctype html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>PDF Result Template</title>
+    <style>
+        * {
+            font-family: sans-serif;
+            font-size: 14px !important;
+        }
+        
+        h1 {
+            color: green;
+        }
+        
+        h3 {
+            font-size: 16px !important;
+        }
+        
+        .tabla {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+        
+        .nada {
+            border: 0px;
+            padding: 0px;
+        }
+        
+        .center {
+            text-align: center;
+        }
+        
+        .titulo {
+            background-color: #777777;
+            color: #fff;
+            font-weight: bold;
+        }
+        
+        .hijos tr:nth-child(even) {
+            background-color: #f1f1ff;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="pageFooter" style="border-top: 1px solid #ddd; padding-top: 5px;">
+        <p style="color: #666; width: 70%; margin: 0; padding-bottom: 5px; text-align: let; font-family: sans-serif; font-size: .65em; float: left;">Facturas generadas por ALMECAPP</p>
+        <p style="color: #666; margin: 0; padding-bottom: 5px; text-align: right; font-family: sans-serif; font-size: .65em">Página {{page}} de {{pages}}</p>
+    </div>
+
+    <table class="tabla">
+        <tr>
+            <td class="none" style=" width: 50%;">
+                <h3 style="margin: 0px;">Teléfono: 34234</h3> <br>
+                <h3 style="margin: 0px;">Dirección: sddfgdgdfg</h3>
+            </td>
+
+            <td class="none" style="text-align: right; width: 50%;">
+                <img src="https://www.motocaliapp.com/5ef488be4d72a1567f9bdfee/files/perfil/4cb8lb2kiawvb5p.jpg" width="150px" alt="">
+
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="2" style="padding: 10px; border: 0px;"></td>
+        </tr>
+    </table>
+
+    <table class="tabla">
+        <tr>
+            <td colspan="4" style="background-color: #777777; text-align: center;color: #ffffff;">Datos del cliente</td>
+        </tr>
+        <tr>
+            <td style="border: 0px; width: 200px; padding: 5px;">Cliente:</td>
+            <td style="border: 0px; text-align:center; border-bottom: 1px solid #333;">dfg dg dfgdfgdfgdfg</td>
+            <td style="border: 0px; width: 200px; padding: 5px; text-align:center;">Nit-CC:</td>
+            <td style="border: 0px; text-align:center; border-bottom: 1px solid #333;">53453453</td>
+        </tr>
+        <tr>
+            <td style="border: 0px; width: 200px; padding: 5px;">Teléfono:</td>
+            <td style="border: 0px; text-align:center; border-bottom: 1px solid #333;">5345357</td>
+            <td style="border: 0px; width: 200px; padding: 5px; text-align:center;">Dirección:</td>
+            <td style="border: 0px; text-align:center; border-bottom: 1px solid #333;">calle 43 dsefsd</td>
+        </tr>
+
+        <tr>
+            <td colspan="4" style="padding:5px; border: 0px;"></td>
+        </tr>
+    </table>
+
+    <table class="tabla">
+        <tbody class="hijos">
+            ${filas}
+        </tbody>
+    </table>
+
+    <table class="tabla">
+        <tr>
+            <td style="text-align: right; font-weight: bold;">Subtotal:</td>
+            <td style="width: 300px; text-align: right;">$100000</td>
+
+        </tr>
+        <tr>
+
+            <td style="text-align: right; background: #f1f1ff; font-weight: bold;">Total</td>
+            <td style="width: 300px; text-align: right;">$100000</td>
+
+        </tr>
+    </table>
+</body>
+
+</html>
