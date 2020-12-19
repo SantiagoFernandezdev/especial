@@ -33,26 +33,16 @@ const staticOptions = {
     setHeaders: setHeadersOnStatic
 }
 
-app.use(express.static(__dirname + '/public/', staticOptions));
-app.use(require('../Routes/index'));
-
+app.use(express.static(__dirname + '/public/www/', staticOptions));
+app.all('*', (req, res) => {
+    res.status(200).sendFile(__dirname + '/public/www/index.html');
+});
 // Base de datos
-mongoose.connect(process.env.URLBD, { useCreateIndex: true, useNewUrlParser: true, useFindAndModify: false, useUnifiedTopology: true }, (err) => {
-    if (err) {
-        return console.log(`Error en la conexión ${err}`);
-    }
 
-})
 
 //Sockets 
 
-module.exports.io = SocketIO(server);
-require('./sockets/sockets');
-
-
 // jobs
-
-require('../Jobs/Recordatorios');
 
 
 server.listen(process.env.PORT, (err) => {
