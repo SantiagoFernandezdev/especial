@@ -604,20 +604,18 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               while (1) {
                 switch (_context2.prev = _context2.next) {
                   case 0:
-                    console.log(event.detail, 'epale');
-
                     if (!(event.detail.value !== '')) {
-                      _context2.next = 11;
+                      _context2.next = 10;
                       break;
                     }
 
                     this.desde = 0;
                     this.infinite.disabled = false;
                     this.patron = event.detail.value;
-                    _context2.next = 7;
+                    _context2.next = 6;
                     return this.almacenamiento.obtenerToken();
 
-                  case 7:
+                  case 6:
                     info = _context2.sent;
 
                     if (info) {
@@ -625,8 +623,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                         desde: this.desde,
                         patron: this.patron
                       }).subscribe(function (data) {
-                        console.log(data, 'mi data');
-
+                        // console.log(data, 'mi data');
                         if (data.exe) {
                           _this3.facturas = data.response;
 
@@ -641,13 +638,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                       });
                     }
 
-                    _context2.next = 12;
+                    _context2.next = 11;
                     break;
 
-                  case 11:
+                  case 10:
                     this.desde = 0;
 
-                  case 12:
+                  case 11:
                   case "end":
                     return _context2.stop();
                 }
@@ -669,7 +666,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 switch (_context3.prev = _context3.next) {
                   case 0:
                     // event.target.complete()
-                    this.desde = this.desde + 5;
+                    this.desde = this.desde + 15;
                     _context3.next = 3;
                     return this.almacenamiento.obtenerToken();
 
@@ -682,8 +679,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                           desde: this.desde,
                           patron: this.patron
                         }).subscribe(function (data) {
-                          console.log(data);
-
+                          // console.log(data, 'CARGADA OFICIAL');
                           if (data.exe) {
                             if (data.response.length > 0) {
                               data.response.forEach(function (hoja) {
@@ -702,13 +698,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                         });
                       } else {
                         // tslint:disable-next-line:max-line-length
-                        console.log(this.desde, 'pli');
+                        // console.log(this.desde, 'pli');
                         this.apiFactura.consultarFacturas(info.token, {
                           desde: this.desde,
                           patron: this.patron
                         }).subscribe(function (data) {
-                          console.log(data, 'mi data 2', _this4.desde);
-
+                          // console.log(data, 'mi data 2', this.desde);
                           if (data.exe) {
                             if (data.response.length > 0) {
                               data.response.forEach(function (hoja) {
@@ -761,7 +756,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                           if (!data.response) {
                             _this5.nuevo = true;
                           } else {
-                            console.log(data);
+                            // console.log(data)
                             _this5.regimen = data.response.regimen;
                             _this5.direccion = data.response.direccion;
                             _this5.titular = data.response.titular;
@@ -913,8 +908,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                         id: id,
                         correo: correo
                       }).subscribe(function (data) {
-                        console.log(data, 'respuesta');
-
+                        // console.log(data, 'respuesta')
                         if (data.exe) {
                           _this7.toast.toastExitoso('Factura generada y enviada al correo electrónico del cliente');
                         } else {

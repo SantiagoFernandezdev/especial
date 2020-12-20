@@ -456,9 +456,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     MenuPage.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({
       type: MenuPage,
       selectors: [["app-menu"]],
-      decls: 13,
+      decls: 12,
       vars: 2,
-      consts: [[1, "ion-no-border"], ["color", "oscuro"], ["color", "light"], [1, "opts"], ["mode", "ios", 3, "routerLink"], ["src", "/assets/NuevaFactura.png", "width", "100px"], [1, "light"], [1, "divider", "light"]],
+      consts: [[1, "ion-no-border"], ["color", "oscuro"], ["color", "light"], [1, "opts"], ["mode", "ios", 3, "routerLink"], ["src", "/assets/NuevaFactura.png", "width", "100px"], [1, "light"]],
       template: function MenuPage_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "ion-header", 0);
@@ -497,11 +497,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](11, "ion-list", 6);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](12, "div", 7);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](11, "ion-list", 6);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
         }

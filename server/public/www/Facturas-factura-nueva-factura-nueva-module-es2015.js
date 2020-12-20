@@ -300,7 +300,7 @@ class FacturaNuevaPage {
     }
     buscar(event) {
         return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
-            console.log(event.detail, 'epale');
+            // console.log(event.detail, 'epale');
             if (event.detail.value !== '') {
                 this.desde = 0;
                 this.infinite.disabled = false;
@@ -308,7 +308,7 @@ class FacturaNuevaPage {
                 const info = yield this.almacenamiento.obtenerToken();
                 if (info) {
                     this.apiFactura.consultarFacturas(info.token, { desde: this.desde, patron: this.patron }).subscribe((data) => {
-                        console.log(data, 'mi data');
+                        // console.log(data, 'mi data');
                         if (data.exe) {
                             this.facturas = data.response;
                             if (data.response.length === 0) {
@@ -331,12 +331,12 @@ class FacturaNuevaPage {
     loadData(event) {
         return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
             // event.target.complete()
-            this.desde = this.desde + 5;
+            this.desde = this.desde + 15;
             const info = yield this.almacenamiento.obtenerToken();
             if (info) {
                 if (this.patron === '') {
                     this.apiFactura.consultarFacturas(info.token, { desde: this.desde, patron: this.patron }).subscribe((data) => {
-                        console.log(data);
+                        // console.log(data, 'CARGADA OFICIAL');
                         if (data.exe) {
                             if (data.response.length > 0) {
                                 data.response.forEach((hoja) => {
@@ -358,9 +358,9 @@ class FacturaNuevaPage {
                 }
                 else {
                     // tslint:disable-next-line:max-line-length
-                    console.log(this.desde, 'pli');
+                    // console.log(this.desde, 'pli');
                     this.apiFactura.consultarFacturas(info.token, { desde: this.desde, patron: this.patron }).subscribe((data) => {
-                        console.log(data, 'mi data 2', this.desde);
+                        // console.log(data, 'mi data 2', this.desde);
                         if (data.exe) {
                             if (data.response.length > 0) {
                                 data.response.forEach((hoja) => {
@@ -393,7 +393,7 @@ class FacturaNuevaPage {
                             this.nuevo = true;
                         }
                         else {
-                            console.log(data);
+                            // console.log(data)
                             this.regimen = data.response.regimen;
                             this.direccion = data.response.direccion;
                             this.titular = data.response.titular;
@@ -473,7 +473,7 @@ class FacturaNuevaPage {
             this.loading.cargaProcesos('Creando Factura y enviandola al correo');
             if (info) {
                 this.apiFactura.enviarrFacturas(info.token, { id, correo }).subscribe((data) => {
-                    console.log(data, 'respuesta');
+                    // console.log(data, 'respuesta')
                     if (data.exe) {
                         this.toast.toastExitoso('Factura generada y enviada al correo electrónico del cliente');
                     }
